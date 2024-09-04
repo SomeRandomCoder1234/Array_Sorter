@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Sorting</title>
+<style>
+  body {
+    text-align:center;
+    background-image: url("https://news.harvard.edu/wp-content/uploads/2022/11/iStock-mathproblems.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  input, button {
+    margin: 10px;
+    padding: 5px;
+  }
+</style>
+</head>
+<body>
+
+<input type="text" id="inputArray" placeholder="Enter numbers separated by commas">
+<button onclick="sortArray()">Sort</button>
+<p id="sortedArray"></p>
+
+<script>
+function sortArray() {
+  var input = document.getElementById("inputArray").value;
+  var numbers = input.split(",");
+  
+  for (var i = 0; i < numbers.length; i++) {
+    numbers[i] = parseInt(numbers[i], 10);
+  }
+
+  numbers.sort(function(a, b) {
+    return a - b;
+  });
+
+  document.getElementById("sortedArray").textContent = "Sorted Array: " + numbers.join(", ");
+}
+</script>
+
+</body>
+</html>
